@@ -1,28 +1,59 @@
 "use client";
 
+import Submit from "./submit";
 import styles from "./page.module.css";
 
 function Home() {
-  // const res = fetch("http://localhost:3001/api/content");
-  // const expressContent = res.text();
-  // console.log("Express Content:", expressContent);
-
-  const expressContent = "<p>Static HTML Content</p>";
-  const markup = { __html: expressContent };
-  console.log(markup);
   return (
     <main className={styles.main}>
-      <h1>hello next.js</h1>
-      <div dangerouslySetInnerHTML={markup} />
+      <Submit />
     </main>
   );
 }
 
-Home.getInitialProps = async () => {
-  const expressContent = "<p>Static HTML Content</p>";
-  console.log(expressContent);
-  return { expressContent };
-};
+export default Home;
+
+// import styles from "./page.module.css";
+
+// import fs from "fs";
+
+// // pages/my-page.js
+
+// export async function getServerSideProps() {
+//   const htmlString = fs.readFileSync("output.html", "utf8");
+
+//   return {
+//     props: {
+//       htmlContent: htmlString,
+//     },
+//   };
+// }
+
+// export default function MyPage({ htmlContent }) {
+//   return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+// }
+
+// function Home() {
+// const res = fetch("http://localhost:3001/api/content");
+// const expressContent = res.text();
+// console.log("Express Content:", expressContent);
+
+//   const expressContent = "<p>Static HTML Content</p>";
+//   const markup = { __html: expressContent };
+//   console.log(markup);
+//   return (
+//     <main className={styles.main}>
+//       <h1>hello next.js</h1>
+//       <div dangerouslySetInnerHTML={markup} />
+//     </main>
+//   );
+// }
+
+// Home.getInitialProps = async () => {
+//   const expressContent = "<p>Static HTML Content</p>";
+//   console.log(expressContent);
+//   return { expressContent };
+// };
 
 // Home.getInitialProps = async () => {
 //   try {
@@ -36,7 +67,7 @@ Home.getInitialProps = async () => {
 //   }
 // };
 
-export default Home;
+// export default Home;
 
 // import React from "react";
 
