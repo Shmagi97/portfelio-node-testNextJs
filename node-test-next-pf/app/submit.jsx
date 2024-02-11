@@ -4,19 +4,19 @@ import { useState } from "react";
 
 const Submit = () => {
 
-    const [userName, setUsername] = useState()
+    const [username, setUsername] = useState()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
 
     const clickSubmit = async (event) => {
         event.preventDefault();
       
-        const response = await fetch("http://localhost:4000/register", {
+        const response = await fetch(" http://localhost:4000/register ", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
               },
-            body: JSON.stringify({ userName, email, password })
+            body: JSON.stringify({ username, email, password })
           });
 
          if (response.ok) {
